@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Privacy Policy — BuckBudget</title>
+<link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0a0a0a;
+    --surface: #141414;
+    --surface2: #1c1c1c;
+    --border: rgba(255,255,255,0.07);
+    --border2: rgba(255,255,255,0.13);
+    --green: #00e676;
+    --green-dim: rgba(0,230,118,0.10);
+    --amber: #ffb300;
+    --text: #f0f0f0;
+    --text2: #888;
+    --text3: #4a4a4a;
+    --gold: #d4af37;
+    --gold-dim: rgba(212,175,55,0.10);
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  html, body {
+    background: var(--bg);
+    color: var(--text);
+    font-family: 'Syne', sans-serif;
+    min-height: 100vh;
+    line-height: 1.7;
+  }
+
+  /* Header */
+  .header {
+    position: sticky; top: 0; z-index: 100;
+    background: rgba(10,10,10,0.95);
+    backdrop-filter: blur(24px);
+    border-bottom: 1px solid var(--border);
+    padding: 16px 20px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .header-brand { font-size: 17px; font-weight: 800; letter-spacing: -0.3px; }
+  .header-brand span { color: var(--green); }
+  .header-badge {
+    font-size: 10px; font-weight: 600; letter-spacing: 1.5px;
+    text-transform: uppercase; color: var(--gold);
+    background: var(--gold-dim); border: 1px solid rgba(212,175,55,0.2);
+    padding: 3px 9px; border-radius: 20px;
+  }
+
+  /* Body */
+  .page { max-width: 680px; margin: 0 auto; padding: 40px 20px 80px; }
+
+  /* Hero */
+  .hero { margin-bottom: 40px; }
+  .hero-label {
+    font-size: 10px; font-weight: 700; letter-spacing: 3px;
+    text-transform: uppercase; color: var(--text3);
+    margin-bottom: 10px;
+  }
+  .hero-title {
+    font-size: 32px; font-weight: 800; letter-spacing: -0.5px;
+    margin-bottom: 8px; line-height: 1.15;
+  }
+  .hero-title span { color: var(--green); }
+  .hero-sub { font-size: 14px; color: var(--text2); line-height: 1.7; }
+
+  /* Highlight card */
+  .highlight {
+    background: linear-gradient(135deg, rgba(0,230,118,0.07), rgba(0,230,118,0.02));
+    border: 1px solid rgba(0,230,118,0.2);
+    border-radius: 16px; padding: 20px 22px;
+    margin-bottom: 32px;
+  }
+  .highlight-title {
+    font-size: 13px; font-weight: 700; color: var(--green);
+    text-transform: uppercase; letter-spacing: 0.5px;
+    margin-bottom: 8px;
+  }
+  .highlight p { font-size: 13px; color: #ccc; line-height: 1.7; }
+
+  /* Section */
+  .section { margin-bottom: 32px; }
+  .section-title {
+    font-size: 11px; font-weight: 700; letter-spacing: 2px;
+    text-transform: uppercase; color: var(--text3);
+    margin-bottom: 14px;
+    display: flex; align-items: center; gap: 8px;
+  }
+  .section-title::after {
+    content: ''; flex: 1; height: 1px; background: var(--border);
+  }
+
+  .card {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 16px; padding: 22px;
+  }
+  .card h3 {
+    font-size: 15px; font-weight: 700; color: var(--text);
+    margin-bottom: 8px;
+  }
+  .card p { font-size: 13px; color: var(--text2); line-height: 1.75; margin-bottom: 12px; }
+  .card p:last-child { margin-bottom: 0; }
+  .card ul {
+    list-style: none; padding: 0;
+    display: flex; flex-direction: column; gap: 8px;
+    margin-bottom: 12px;
+  }
+  .card ul li {
+    font-size: 13px; color: var(--text2); line-height: 1.6;
+    padding-left: 18px; position: relative;
+  }
+  .card ul li::before {
+    content: '→';
+    position: absolute; left: 0;
+    color: var(--green); font-size: 11px; top: 2px;
+  }
+
+  .card + .card { margin-top: 10px; }
+
+  /* Divider inside card */
+  .card-divider { height: 1px; background: var(--border); margin: 16px 0; }
+
+  /* Contact card */
+  .contact-card {
+    background: linear-gradient(135deg, rgba(212,175,55,0.06), rgba(212,175,55,0.02));
+    border: 1px solid rgba(212,175,55,0.2);
+    border-radius: 16px; padding: 22px;
+    margin-top: 32px;
+  }
+  .contact-title {
+    font-size: 15px; font-weight: 700; color: var(--gold);
+    margin-bottom: 6px;
+  }
+  .contact-sub { font-size: 13px; color: var(--text2); line-height: 1.7; }
+  .contact-email {
+    display: inline-block; margin-top: 10px;
+    font-family: 'DM Mono', monospace; font-size: 13px;
+    color: var(--gold); text-decoration: none;
+    background: rgba(212,175,55,0.08);
+    border: 1px solid rgba(212,175,55,0.2);
+    padding: 8px 14px; border-radius: 10px;
+  }
+
+  /* Date footer */
+  .footer {
+    margin-top: 48px; padding-top: 20px;
+    border-top: 1px solid var(--border);
+    text-align: center;
+  }
+  .footer p { font-size: 11px; color: var(--text3); line-height: 1.7; }
+  .footer a { color: var(--text3); text-decoration: underline; }
+
+  /* Back link */
+  .back-link {
+    display: inline-flex; align-items: center; gap: 6px;
+    font-size: 12px; font-weight: 600; color: var(--text2);
+    text-decoration: none; margin-bottom: 32px;
+    padding: 8px 14px; border-radius: 10px;
+    background: var(--surface); border: 1px solid var(--border);
+    transition: border-color 0.2s, color 0.2s;
+  }
+  .back-link:hover { border-color: var(--green); color: var(--green); }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div class="header-brand">Buck<span>Budget</span></div>
+  <div class="header-badge">Privacy Policy</div>
+</div>
+
+<div class="page">
+
+  <a href="/" class="back-link">← Back to BuckBudget</a>
+
+  <div class="hero">
+    <div class="hero-label">Legal · Privacy</div>
+    <div class="hero-title">Your Privacy is<br><span>Our Foundation</span></div>
+    <div class="hero-sub">BuckBudget was built with one rule: your financial data is yours and yours alone. We don't sell it, share it, or store it on any server. Here's exactly how it works.</div>
+  </div>
+
+  <div class="highlight">
+    <div class="highlight-title">🔒 The Short Version</div>
+    <p>BuckBudget stores all of your financial data <strong>locally on your device only</strong>. We never see your numbers, your name, or your bank information. No bank login is ever required. Your data never leaves your phone.</p>
+  </div>
+
+  <!-- 1. Who We Are -->
+  <div class="section">
+    <div class="section-title">Who We Are</div>
+    <div class="card">
+      <p>BuckBudget is a personal finance application created by Matt Neal ("we," "us," or "our"). BuckBudget is designed to help individuals budget, plan for retirement, track savings goals, and manage bills — all without requiring access to your bank accounts or any sensitive financial credentials.</p>
+      <p>If you have any questions about this policy, you can reach us at the contact information provided at the bottom of this page.</p>
+    </div>
+  </div>
+
+  <!-- 2. What We Collect -->
+  <div class="section">
+    <div class="section-title">What Data We Collect</div>
+    <div class="card">
+      <h3>Data Stored Locally On Your Device</h3>
+      <p>When you use BuckBudget, the following information is saved directly to your device using your browser's local storage. This data <strong>never leaves your device</strong> and is never transmitted to us:</p>
+      <ul>
+        <li>Your first name (if you choose to enter it during onboarding)</li>
+        <li>Budget figures you enter (income, expenses, debt amounts)</li>
+        <li>Retirement calculator inputs (age, savings, goals)</li>
+        <li>Savings goals you create</li>
+        <li>Bill reminders you add</li>
+        <li>Credit card payoff calculator entries</li>
+        <li>App settings and preferences</li>
+      </ul>
+      <div class="card-divider"></div>
+      <h3>Optional: Email Address</h3>
+      <p>During onboarding, you have the option (not required) to provide your email address. If you choose to do so, your email is used solely to send you BuckBudget product updates and new feature announcements. We use a third-party email service (Mailchimp) to manage this list. You can unsubscribe at any time. We will never sell your email address or use it for any other purpose.</p>
+    </div>
+
+    <div class="card">
+      <h3>What We Do NOT Collect</h3>
+      <ul>
+        <li>We do not collect your bank account information</li>
+        <li>We do not require any login or account creation</li>
+        <li>We do not collect your Social Security number or tax ID</li>
+        <li>We do not track your location</li>
+        <li>We do not use advertising trackers or sell your data to advertisers</li>
+        <li>We do not access your contacts, camera, or microphone</li>
+        <li>We do not share your financial data with any third party</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 3. How Data is Stored -->
+  <div class="section">
+    <div class="section-title">How Your Data is Stored</div>
+    <div class="card">
+      <p>All financial data you enter into BuckBudget is stored using your device's local storage — the same technology browsers use to remember your preferences on websites. This means:</p>
+      <ul>
+        <li>Your data exists only on the device you use the app on</li>
+        <li>Clearing your browser cache or app data will delete your BuckBudget data</li>
+        <li>Uninstalling the app will delete your data</li>
+        <li>We have no ability to recover your data if it is deleted</li>
+        <li>Your data is not backed up to any cloud server by BuckBudget</li>
+      </ul>
+      <p>We recommend periodically noting down your key figures in a safe place in case your device data is cleared.</p>
+    </div>
+  </div>
+
+  <!-- 4. Push Notifications -->
+  <div class="section">
+    <div class="section-title">Push Notifications</div>
+    <div class="card">
+      <p>BuckBudget may request permission to send you push notifications for bill reminders. This is entirely optional. If you grant permission:</p>
+      <ul>
+        <li>Notifications are generated locally on your device based on bill dates you enter</li>
+        <li>No notification content is sent to or processed by our servers</li>
+        <li>You can revoke notification permission at any time in your device settings</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- 5. Third-Party Services -->
+  <div class="section">
+    <div class="section-title">Third-Party Services</div>
+    <div class="card">
+      <h3>Mailchimp (Optional Email List)</h3>
+      <p>If you opt in with your email during onboarding, your email is sent to Mailchimp, our email marketing provider. Mailchimp stores your email on their servers according to their own privacy policy. You can view Mailchimp's privacy policy at mailchimp.com/legal/privacy.</p>
+      <div class="card-divider"></div>
+      <h3>Google Fonts & Chart.js</h3>
+      <p>BuckBudget loads fonts from Google Fonts and a charting library (Chart.js) from a content delivery network (cdnjs.cloudflare.com). These services may log your IP address as part of standard web traffic handling, subject to their own privacy policies. No financial data is shared with these services.</p>
+      <div class="card-divider"></div>
+      <h3>Netlify (Hosting)</h3>
+      <p>BuckBudget is hosted on Netlify. Netlify may collect standard web server logs including IP addresses and browser information. This is standard hosting behavior and no financial data from the app is accessible to Netlify.</p>
+    </div>
+  </div>
+
+  <!-- 6. Children's Privacy -->
+  <div class="section">
+    <div class="section-title">Children's Privacy</div>
+    <div class="card">
+      <p>BuckBudget is not directed at children under the age of 13. We do not knowingly collect personal information from children under 13. If you believe a child has provided us with personal information, please contact us so we can delete it.</p>
+    </div>
+  </div>
+
+  <!-- 7. Your Rights -->
+  <div class="section">
+    <div class="section-title">Your Rights & Choices</div>
+    <div class="card">
+      <p>Because BuckBudget stores data locally on your device, you have full control over your data at all times:</p>
+      <ul>
+        <li><strong>Access:</strong> All your data is visible directly within the app</li>
+        <li><strong>Deletion:</strong> Clear your browser/app local storage to delete all data instantly</li>
+        <li><strong>Email opt-out:</strong> Unsubscribe from any email we send using the unsubscribe link, or contact us directly</li>
+        <li><strong>Notification opt-out:</strong> Revoke notification permission in your device settings at any time</li>
+      </ul>
+      <p>If you provided your email and want it removed from our list, contact us at the address below and we will remove it within 7 business days.</p>
+    </div>
+  </div>
+
+  <!-- 8. Changes -->
+  <div class="section">
+    <div class="section-title">Changes to This Policy</div>
+    <div class="card">
+      <p>We may update this Privacy Policy from time to time. If we make significant changes, we will update the "Last Updated" date at the bottom of this page. We encourage you to review this policy periodically. Continued use of BuckBudget after changes are posted constitutes your acceptance of the updated policy.</p>
+    </div>
+  </div>
+
+  <!-- Contact -->
+  <div class="contact-card">
+    <div class="contact-title">📬 Contact Us</div>
+    <div class="contact-sub">Questions about this Privacy Policy or your data? We're happy to help. Reach out and we'll respond within 5 business days.</div>
+    <a href="mailto:privacy@buckbudget.app" class="contact-email">privacy@buckbudget.app</a>
+  </div>
+
+  <div class="footer">
+    <p>Last Updated: April 4, 2026 &nbsp;·&nbsp; BuckBudget v1.0 &nbsp;·&nbsp; © 2026 Matt Neal</p>
+    <p style="margin-top:6px;"><a href="/">← Return to BuckBudget</a></p>
+  </div>
+
+</div>
+</body>
+</html>
