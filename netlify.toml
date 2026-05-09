@@ -6,3 +6,12 @@
   for = "/*"
   [headers.values]
     Cache-Control = "no-cache"
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Cache-Control = "no-cache"
+
+[[headers]]
+  for = "*.html"
+  [headers.values]
+    Cache-Control = "no-store, no-cache, must-revalidate"
